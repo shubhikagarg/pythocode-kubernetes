@@ -7,12 +7,12 @@ phases:
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
       - "docker build -t machineinfo ."
-      - "docker tag machineinfo shubhikagarg/pythoncode:v1.1.0"
+      - "docker tag machineinfo shubhikagarg/machineinfo:v1.1.0"
    post_build:
     commands:
       - "echo Build completed on `date`"
       - "echo Pushing the Docker image..."
-      - "docker push shubhikagarg/pythoncode:v1.1.0"
+      - "docker push shubhikagarg/machineinfo:v1.1.0"
   pre_build:
     commands:
       - "echo Logging in to Docker Hub..."

@@ -1,0 +1,20 @@
+phases:
+  install:
+   runtime-versions:
+     docker: 18
+  build:
+   commands:
+      - "echo Build started on `date`"
+      - "echo Building the Docker image..."
+      - "docker build -t machineinfodemo ."
+      - "docker tag machineinfodemo shubhikagarg/pythoncode:v1.1.0"
+   post_build:
+    commands:
+      - "echo Build completed on `date`"
+      - "echo Pushing the Docker image..."
+      - "docker push shubhikagarg/pythoncode:v1.1.0"
+  pre_build:
+    commands:
+      - "echo Logging in to Docker Hub..."
+      - "docker login --username=\"shubhikagarg\" --password=\"shubhika1612\""
+version: 0.2
